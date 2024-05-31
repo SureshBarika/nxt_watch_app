@@ -1,9 +1,10 @@
-import {Route, Redirect, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 import {Component} from 'react'
 
 import NxtWatchContext from './context/index'
 import Login from './components/login'
+import ProtectedRoute from './components/ProctedRoute'
 
 import './App.css'
 
@@ -25,7 +26,7 @@ class App extends Component {
     return (
       <NxtWatchContext.Provider value={{darkMode, updateMode: this.toggleMode}}>
         <Switch>
-          <Route path="/login" component={Login} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </NxtWatchContext.Provider>
     )
