@@ -101,9 +101,6 @@ class Login extends Component {
             <div className={`${mainContBg} login-main-cont`}>
               <div className={`${cardBg} login-card`}>
                 <img className="login-logo-img" src={logoUrl} alt="logo" />
-                <button type="button" onClick={toggle}>
-                  update
-                </button>
                 <form className="login-form" onSubmit={this.submitUser}>
                   <label className={labelClass} htmlFor="username">
                     USERNAME
@@ -116,6 +113,7 @@ class Login extends Component {
                     type="text"
                     value={username}
                     onChange={this.updateUsername}
+                    required
                   />
                   <br />
                   <label className={labelClass} htmlFor="password">
@@ -129,6 +127,7 @@ class Login extends Component {
                     placeholder="Password"
                     value={password}
                     onChange={this.updatePassword}
+                    required
                   />
                   <br />
                   <input
