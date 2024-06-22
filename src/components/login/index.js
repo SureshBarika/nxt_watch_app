@@ -4,7 +4,15 @@ import Cookies from 'js-cookie'
 
 import NxtWatchContext from '../../context/index'
 
-import './index.css'
+import {
+  LoginMainContainer,
+  LoginCard,
+  LoginBtn,
+  LoginForm,
+  LoginLogoImg,
+  Label,
+  InputElement,
+} from './styledComponents'
 
 class Login extends Component {
   state = {
@@ -69,7 +77,7 @@ class Login extends Component {
   }
 
   render() {
-    const {showPassword, username, password, loginStatus} = this.state
+    const {showPassword, username, password, loginStatus, ErrorMsg} = this.state
     const inputType = showPassword ? 'text' : 'password'
     const jwtToken = Cookies.get('jwt_token')
 
@@ -80,34 +88,23 @@ class Login extends Component {
     return (
       <NxtWatchContext.Consumer>
         {value => {
-          const {darkMode, updateMode} = value
-          const toggle = () => {
-            updateMode()
-          }
-
-          const mainContBg = darkMode ? 'main-dark-bg' : ''
-
-          const cardBg = darkMode ? 'card-dark-bg' : 'card-light-bg'
+          const {darkMode} = value
 
           const logoUrl = darkMode
             ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
             : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
 
-          const inputModeType = darkMode ? 'login-input-dark' : ''
-
-          const labelClass = darkMode ? 'label-dark' : 'label-light'
-
           return (
-            <div className={`${mainContBg} login-main-cont`}>
-              <div className={`${cardBg} login-card`}>
-                <img className="login-logo-img" src={logoUrl} alt="logo" />
-                <form className="login-form" onSubmit={this.submitUser}>
-                  <label className={labelClass} htmlFor="username">
+            <LoginMainContainer darkMode={darkMode}>
+              <LoginCard darkMode={darkMode}>
+                <LoginLogoImg src={logoUrl} alt="logo" />
+                <LoginForm onSubmit={this.submitUser}>
+                  <Label darkMode={darkMode} htmlFor="username">
                     USERNAME
-                  </label>
+                  </Label>
                   <br />
-                  <input
-                    className={`${inputModeType} login-input-light`}
+                  <InputElement
+                    darkMode={darkMode}
                     id="username"
                     placeholder="Username"
                     type="text"
@@ -115,13 +112,11 @@ class Login extends Component {
                     onChange={this.updateUsername}
                     required
                   />
-                  <br />
-                  <label className={labelClass} htmlFor="password">
+                  <Label darkMode={darkMode} htmlFor="password">
                     PASSWORD
-                  </label>
-                  <br />
-                  <input
-                    className={`${inputModeType} login-input-light`}
+                  </Label>
+                  <InputElement
+                    darkMode={darkMode}
                     id="password"
                     type={inputType}
                     placeholder="Password"
@@ -129,29 +124,24 @@ class Login extends Component {
                     onChange={this.updatePassword}
                     required
                   />
-                  <br />
                   <input
                     onChange={this.updatePasswordType}
                     value={showPassword}
                     type="checkbox"
                     id="showPass"
                   />
-                  <label className={labelClass} htmlFor="showPass">
+                  <Label darkMode={darkMode} htmlFor="showPass">
                     Show password
-                  </label>
-                  <br />
-                  <button type="submit" className="login-btn">
-                    {' '}
-                    Login
-                  </button>
+                  </Label>
+                  <LoginBtn type="submit"> Login</LoginBtn>
                   {loginStatus && (
-                    <p className="err-msg">
+                    <ErrorMsg className="err-msg">
                       *Username and Password didn`t match
-                    </p>
+                    </ErrorMsg>
                   )}
-                </form>
-              </div>
-            </div>
+                </LoginForm>
+              </LoginCard>
+            </LoginMainContainer>
           )
         }}
       </NxtWatchContext.Consumer>
