@@ -4,6 +4,7 @@ import {Component} from 'react'
 
 import NxtWatchContext from './context/index'
 import Login from './components/login'
+import Home from './components/Home'
 import ProtectedRoute from './components/ProctedRoute'
 
 import './App.css'
@@ -27,6 +28,7 @@ class App extends Component {
       <NxtWatchContext.Provider value={{darkMode, updateMode: this.toggleMode}}>
         <Switch>
           <Route exact path="/login" component={Login} />
+          <ProtectedRoute exact path="/" component={Home} />
         </Switch>
       </NxtWatchContext.Provider>
     )
