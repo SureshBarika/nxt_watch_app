@@ -1,10 +1,19 @@
 import {Component} from 'react'
 
-import {} from './styledComponents'
+import Header from '../Header'
+
+import {HomeMainContainer, PremiumCont} from './styledComponents'
 
 class Home extends Component {
   render() {
-    return <h1>home</h1>
+    return (
+      <HomeMainContainer>
+        <PremiumCont>
+          <Header />
+          <h1>Home</h1>
+        </PremiumCont>
+      </HomeMainContainer>
+    )
   }
 }
 

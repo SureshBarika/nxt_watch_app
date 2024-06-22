@@ -23,6 +23,7 @@ class App extends Component {
 
   render() {
     const {darkMode} = this.state
+    document.title = 'NXT Watch App'
 
     return (
       <NxtWatchContext.Provider value={{darkMode, updateMode: this.toggleMode}}>
