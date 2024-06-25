@@ -79,7 +79,7 @@ export const LoginBtn = Styled.button`
   margin-top: 10px;
 `
 export const ErrorMsg = Styled.p`
-    color: #ff0000;
+  color: #ff0000;
   font-size: 14px;
   align-self: flex-start;
 `

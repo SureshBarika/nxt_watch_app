@@ -8,8 +8,8 @@ class Home extends Component {
   render() {
     return (
       <HomeMainContainer>
+        <Header />
         <PremiumCont>
-          <Header />
           <h1>Home</h1>
         </PremiumCont>
       </HomeMainContainer>

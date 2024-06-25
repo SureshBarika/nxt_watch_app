@@ -12,6 +12,7 @@ import {
   LoginLogoImg,
   Label,
   InputElement,
+  ErrorMsg,
 } from './styledComponents'
 
 class Login extends Component {
@@ -69,6 +70,7 @@ class Login extends Component {
 
     const Responses = await fetch(url, options)
     const data = await Responses.json()
+
     if (Responses.ok === true) {
       this.submitSuccess(data)
     } else {
@@ -77,7 +79,7 @@ class Login extends Component {
   }
 
   render() {
-    const {showPassword, username, password, loginStatus, ErrorMsg} = this.state
+    const {showPassword, username, password, loginStatus} = this.state
     const inputType = showPassword ? 'text' : 'password'
     const jwtToken = Cookies.get('jwt_token')
 
