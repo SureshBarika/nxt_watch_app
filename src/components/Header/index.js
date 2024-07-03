@@ -1,10 +1,9 @@
-import {withRouter} from 'react-router-dom'
+import {withRouter, Link} from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 import Popup from 'reactjs-popup'
 
-import {Link} from 'react'
-import {IoMoon} from 'react-icons/io5'
+import {IoMoon, IoClose} from 'react-icons/io5'
 import {VscThreeBars} from 'react-icons/vsc'
 import {FiLogOut, FiSun} from 'react-icons/fi'
 
@@ -20,6 +19,8 @@ import {
   CloseBtn,
   LogoutBtn,
   BtnsCont,
+  SideBarForMBView,
+  SidebarCloseBtn,
 } from './styledComponents'
 
 const Header = props => (
@@ -36,13 +37,20 @@ const Header = props => (
         history.replace('/login')
       }
 
+      const overlayStyles = {
+        backgroundColor: darkMode ? '#080808' : '#ffffff',
+        width: '100vw',
+      }
+
       const logoUrl = darkMode
         ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
         : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
 
       return (
         <NavBarCont darkMode={darkMode}>
-          <LogoImg src={logoUrl} alt="nxt watch logo" />
+          <Link to="/">
+            <LogoImg src={logoUrl} alt="nxt watch logo" />
+          </Link>
           <OptionsContForMBView>
             <NavBtn darkMode={darkMode} onClick={toggleMode}>
               {darkMode ? <FiSun /> : <IoMoon />}
@@ -55,25 +63,21 @@ const Header = props => (
                   <VscThreeBars />
                 </NavBtn>
               }
+              overlayStyle={overlayStyles}
             >
               {close => (
                 <>
-                  <LogoutPopupContainer darkMode={darkMode}>
-                    <LogoutPera darkMode={darkMode}>
-                      Are you sure. You want Logout?
-                    </LogoutPera>
-                    <BtnsCont>
-                      <CloseBtn
-                        darkMode={darkMode}
-                        type="button"
-                        onClick={() => close()}
-                      >
-                        {' '}
-                        Close{' '}
-                      </CloseBtn>
-                      <LogoutBtn onClick={logoutPage}>Confirm</LogoutBtn>
-                    </BtnsCont>
-                  </LogoutPopupContainer>
+                  <SideBarForMBView darkMode={darkMode}>
+                    <SidebarCloseBtn
+                      darkMode={darkMode}
+                      type="button"
+                      onClick={() => close()}
+                    >
+                      {' '}
+                      <IoClose />{' '}
+                    </SidebarCloseBtn>
+                    <h1>ok</h1>
+                  </SideBarForMBView>
                 </>
               )}
             </Popup>

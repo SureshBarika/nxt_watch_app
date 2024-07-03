@@ -61,3 +61,23 @@ export const BtnsCont = Styled.div`
     display:flex;
     justify-content:space-around;
 `
+export const SideBarForMBView = Styled.div`
+    width:100wh;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+`
+
+export const SidebarCloseBtn = Styled.button`
+    margin:10px;
+    border:0px;
+    background-color:transparent;
+    outline:none;
+    font-size:25px;
+   margin-bottom:100px;
+   margin-left:300px;
+   color:${props => (props.darkMode ? '#ffffff' : '#080808')};
+   align-self:flex-start;
+
+`
