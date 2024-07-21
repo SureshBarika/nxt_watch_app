@@ -9,6 +9,8 @@ import {FiLogOut, FiSun} from 'react-icons/fi'
 
 import NxtWatchContext from '../../context'
 
+import MenuBar from '../NavigationBar'
+
 import {
   NavBarCont,
   LogoImg,
@@ -76,7 +78,7 @@ const Header = props => (
                       {' '}
                       <IoClose />{' '}
                     </SidebarCloseBtn>
-                    <h1>ok</h1>
+                    <MenuBar closePopUp={() => close()} />
                   </SideBarForMBView>
                 </>
               )}

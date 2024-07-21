@@ -16,7 +16,7 @@ export const OptionsContForMBView = Styled.div`
     padding:5px;
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:center; 
 `
 
 export const NavBtn = Styled.button`
@@ -62,7 +62,7 @@ export const BtnsCont = Styled.div`
     justify-content:space-around;
 `
 export const SideBarForMBView = Styled.div`
-    width:100wh;
+    width:100vw;
     height:100vh;
     display:flex;
     flex-direction:column;
@@ -70,14 +70,12 @@ export const SideBarForMBView = Styled.div`
 `
 
 export const SidebarCloseBtn = Styled.button`
-    margin:10px;
+    margin:20px;
     border:0px;
     background-color:transparent;
     outline:none;
     font-size:25px;
-   margin-bottom:100px;
-   margin-left:300px;
    color:${props => (props.darkMode ? '#ffffff' : '#080808')};
-   align-self:flex-start;
+   align-self:flex-end;
 
 `
