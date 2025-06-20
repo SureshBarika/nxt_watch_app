@@ -37,6 +37,7 @@ class App extends Component {
   state = {
     darkMode: false,
     activeMenu: '',
+    premiumPopUp: true,
   }
 
   toggleMenu = id => {
@@ -49,8 +50,14 @@ class App extends Component {
     }))
   }
 
+  togglePremiumPopUp = () => {
+    this.setState(prvState => ({
+      premiumPopUp: !prvState.premiumPopUp,
+    }))
+  }
+
   render() {
-    const {darkMode, activeMenu} = this.state
+    const {darkMode, activeMenu, premiumPopUp} = this.state
     document.title = 'NXT Watch App'
 
     return (
@@ -58,8 +65,10 @@ class App extends Component {
         value={{
           darkMode,
           activeMenu,
+          premiumPopUp,
           updateMode: this.toggleMode,
           updateActiveMenu: this.toggleMenu,
+          updatePremiumPopUp: this.togglePremiumPopUp,
         }}
       >
         <Switch>

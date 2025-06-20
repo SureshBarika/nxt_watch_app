@@ -16,9 +16,13 @@ import {
   LogoImg,
   OptionsContForMBView,
   NavBtn,
+  BarBtn,
+  ProfileImg,
+  LogoutIcon,
   LogoutPopupContainer,
   LogoutPera,
   CloseBtn,
+  LogoutBtnClick,
   LogoutBtn,
   BtnsCont,
   SideBarForMBView,
@@ -61,9 +65,9 @@ const Header = props => (
             <Popup
               modal
               trigger={
-                <NavBtn darkMode={darkMode}>
+                <BarBtn darkMode={darkMode}>
                   <VscThreeBars />
-                </NavBtn>
+                </BarBtn>
               }
               overlayStyle={overlayStyles}
             >
@@ -83,12 +87,22 @@ const Header = props => (
                 </>
               )}
             </Popup>
+            <ProfileImg
+              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+              alt="profile"
+            />
+
             <Popup
               modal
               trigger={
-                <NavBtn darkMode={darkMode}>
-                  <FiLogOut />
-                </NavBtn>
+                <div>
+                  <LogoutIcon darkMode={darkMode}>
+                    <FiLogOut />
+                  </LogoutIcon>
+                  <LogoutBtnClick type="button" darkMode={darkMode}>
+                    Logout
+                  </LogoutBtnClick>
+                </div>
               }
             >
               {close => (

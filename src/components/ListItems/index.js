@@ -1,4 +1,4 @@
-import {withRouter, Link} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 import {ListItem, ListItemCont, MenuName} from './styledComponents'
 

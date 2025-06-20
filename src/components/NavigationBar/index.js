@@ -1,4 +1,4 @@
-import {Link, withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 import {IoHomeSharp, IoGameController} from 'react-icons/io5'
 import {HiFire} from 'react-icons/hi'
@@ -8,13 +8,7 @@ import NxtWatchContext from '../../context'
 
 import ListItems from '../ListItems'
 
-import {
-  MainMenuContainer,
-  MenuList,
-  ListItem,
-  ListItemCont,
-  MenuName,
-} from './styledComponents'
+import {MainMenuContainer, MenuList} from './styledComponents'
 
 const menuBar = [
   {
