@@ -53,81 +53,83 @@ const Header = props => (
         : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
 
       return (
-        <NavBarCont darkMode={darkMode}>
-          <Link to="/">
-            <LogoImg src={logoUrl} alt="nxt watch logo" />
-          </Link>
-          <OptionsContForMBView>
-            <NavBtn darkMode={darkMode} onClick={toggleMode}>
-              {darkMode ? <FiSun /> : <IoMoon />}
-            </NavBtn>
+        <>
+          <NavBarCont darkMode={darkMode}>
+            <Link to="/">
+              <LogoImg src={logoUrl} alt="nxt watch logo" />
+            </Link>
+            <OptionsContForMBView>
+              <NavBtn darkMode={darkMode} onClick={toggleMode}>
+                {darkMode ? <FiSun /> : <IoMoon />}
+              </NavBtn>
 
-            <Popup
-              modal
-              trigger={
-                <BarBtn darkMode={darkMode}>
-                  <VscThreeBars />
-                </BarBtn>
-              }
-              overlayStyle={overlayStyles}
-            >
-              {close => (
-                <>
-                  <SideBarForMBView darkMode={darkMode}>
-                    <SidebarCloseBtn
-                      darkMode={darkMode}
-                      type="button"
-                      onClick={() => close()}
-                    >
-                      {' '}
-                      <IoClose />{' '}
-                    </SidebarCloseBtn>
-                    <MenuBar closePopUp={() => close()} />
-                  </SideBarForMBView>
-                </>
-              )}
-            </Popup>
-            <ProfileImg
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-              alt="profile"
-            />
-
-            <Popup
-              modal
-              trigger={
-                <div>
-                  <LogoutIcon darkMode={darkMode}>
-                    <FiLogOut />
-                  </LogoutIcon>
-                  <LogoutBtnClick type="button" darkMode={darkMode}>
-                    Logout
-                  </LogoutBtnClick>
-                </div>
-              }
-            >
-              {close => (
-                <>
-                  <LogoutPopupContainer darkMode={darkMode}>
-                    <LogoutPera darkMode={darkMode}>
-                      Are you sure. You want Logout?
-                    </LogoutPera>
-                    <BtnsCont>
-                      <CloseBtn
+              <Popup
+                modal
+                trigger={
+                  <BarBtn darkMode={darkMode}>
+                    <VscThreeBars />
+                  </BarBtn>
+                }
+                overlayStyle={overlayStyles}
+              >
+                {close => (
+                  <>
+                    <SideBarForMBView darkMode={darkMode}>
+                      <SidebarCloseBtn
                         darkMode={darkMode}
                         type="button"
                         onClick={() => close()}
                       >
                         {' '}
-                        Close{' '}
-                      </CloseBtn>
-                      <LogoutBtn onClick={logoutPage}>Confirm</LogoutBtn>
-                    </BtnsCont>
-                  </LogoutPopupContainer>
-                </>
-              )}
-            </Popup>
-          </OptionsContForMBView>
-        </NavBarCont>
+                        <IoClose />{' '}
+                      </SidebarCloseBtn>
+                      <MenuBar closePopUp={() => close()} />
+                    </SideBarForMBView>
+                  </>
+                )}
+              </Popup>
+              <ProfileImg
+                src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                alt="profile"
+              />
+
+              <Popup
+                modal
+                trigger={
+                  <>
+                    <LogoutIcon darkMode={darkMode}>
+                      <FiLogOut />
+                    </LogoutIcon>
+                    <LogoutBtnClick type="button" darkMode={darkMode}>
+                      Logout
+                    </LogoutBtnClick>
+                  </>
+                }
+              >
+                {close => (
+                  <>
+                    <LogoutPopupContainer darkMode={darkMode}>
+                      <LogoutPera darkMode={darkMode}>
+                        Are you sure. You want Logout?
+                      </LogoutPera>
+                      <BtnsCont>
+                        <CloseBtn
+                          darkMode={darkMode}
+                          type="button"
+                          onClick={() => close()}
+                        >
+                          {' '}
+                          Close{' '}
+                        </CloseBtn>
+                        <LogoutBtn onClick={logoutPage}>Confirm</LogoutBtn>
+                      </BtnsCont>
+                    </LogoutPopupContainer>
+                  </>
+                )}
+              </Popup>
+            </OptionsContForMBView>
+          </NavBarCont>
+        </>
       )
     }}
   </NxtWatchContext.Consumer>

@@ -1,13 +1,13 @@
 import Styled from 'styled-components'
 
 export const SideBarMainCont = Styled.div`
-    display:fixed;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     width:250px;
     height:90vh;
     padding:10px;
+    bottom:0;
     background-color:${props => (props.darkMode ? '#181818' : '#ffff')};
     @media screen and (max-width:768px) {
         display:none;

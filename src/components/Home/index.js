@@ -16,10 +16,21 @@ import {
   GetPremiumBtn,
   DividerCont,
   HomeOffCont,
+  HomeContainerMainInfo,
+  SearchInput,
 } from './styledComponents'
 
 class Home extends Component {
+  state = {
+    searchInput: '',
+  }
+
+  updateSearch = prop => {
+    this.setState(() => ({searchInput: prop.target.value}))
+  }
+
   render() {
+    const {searchInput} = this.state
     return (
       <NxtWatchContext.Consumer>
         {value => {
@@ -53,6 +64,16 @@ class Home extends Component {
                     </PremiumPera>
                     <GetPremiumBtn>Get Premium</GetPremiumBtn>
                   </PremiumCont>
+                  <HomeContainerMainInfo darkMode={darkMode}>
+                    <SearchInput
+                      value={searchInput}
+                      darkMode={darkMode}
+                      id="search"
+                      placeholder="Search"
+                      type="text"
+                      onChange={this.updateSearch}
+                    />
+                  </HomeContainerMainInfo>
                 </HomeOffCont>
               </DividerCont>
             </HomeMainContainer>

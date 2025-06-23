@@ -1,6 +1,7 @@
 import Styled from 'styled-components'
 
 export const NavBarCont = Styled.nav`
+    
     margin:0px;
     padding:10px;
     display:flex;
@@ -14,6 +15,7 @@ export const NavBarCont = Styled.nav`
       props.darkMode ? '#ffffff' : '#181818'};
     @media screen and (min-width:768px) {
         padding:15px;
+        height:10vh;
 }
 `
 export const LogoImg = Styled.img`
