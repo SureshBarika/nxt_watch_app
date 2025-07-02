@@ -1,6 +1,7 @@
 import Styled from 'styled-components'
 
 export const MainMenuContainer = Styled.div`
+
   width: 100%;
   display: flex;
   justify-content:center;

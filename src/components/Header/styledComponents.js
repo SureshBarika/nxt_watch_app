@@ -7,7 +7,11 @@ export const NavCont = Styled.div`
 `
 
 export const NavBarCont = Styled.nav`
+<<<<<<< HEAD
     position:fixed;
+=======
+    
+>>>>>>> 2ca532d77b35aee9f418e31ff4631a9d49e14056
     margin:0px;
     padding:10px;
     display:flex;
@@ -19,6 +23,7 @@ export const NavBarCont = Styled.nav`
     background-Color:${props => (props.darkMode ? '#181818' : '#ffffff')};
     @media screen and (min-width:768px) {
         padding:15px;
+        height:10vh;
 }
 `
 export const LogoImg = Styled.img`

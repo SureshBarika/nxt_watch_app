@@ -10,13 +10,25 @@ export const SideBarCont = Styled.div`
 `
 
 export const SideBarMainCont = Styled.div`
+<<<<<<< HEAD
    position:fixed;
+=======
+>>>>>>> 2ca532d77b35aee9f418e31ff4631a9d49e14056
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     width:250px;
     max-height:100vh;
     padding:10px;
+<<<<<<< HEAD
+=======
+    bottom:0;
+    background-color:${props => (props.darkMode ? '#181818' : '#ffff')};
+    @media screen and (max-width:768px) {
+        display:none;
+    }
+
+>>>>>>> 2ca532d77b35aee9f418e31ff4631a9d49e14056
 `
 
 export const ContactUsCont = Styled.div`
