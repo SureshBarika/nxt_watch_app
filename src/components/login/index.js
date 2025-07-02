@@ -99,7 +99,7 @@ class Login extends Component {
           return (
             <LoginMainContainer darkMode={darkMode}>
               <LoginCard darkMode={darkMode}>
-                <LoginLogoImg src={logoUrl} alt="logo" />
+                <LoginLogoImg src={logoUrl} alt="website logo" />
                 <LoginForm onSubmit={this.submitUser}>
                   <Label darkMode={darkMode} htmlFor="username">
                     USERNAME
@@ -108,7 +108,7 @@ class Login extends Component {
                   <InputElement
                     darkMode={darkMode}
                     id="username"
-                    placeholder="Username"
+                    placeholder="USERNAME"
                     type="text"
                     value={username}
                     onChange={this.updateUsername}

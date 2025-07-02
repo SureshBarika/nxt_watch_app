@@ -1,17 +1,22 @@
 import Styled from 'styled-components'
 
+export const NavCont = Styled.div`
+    width:100%;
+    height:80px;
+     background-Color:${props => (props.darkMode ? '#181818' : '#ffffff')};
+`
+
 export const NavBarCont = Styled.nav`
+    position:fixed;
     margin:0px;
     padding:10px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-Color:${props => (props.darkMode ? '#181818' : '#ffffff')};
     font-family:"Roboto";
-    width:100%;
     box-shadow:5px 10px -20px 5px;
-    border-bottom:1px dotted ${props =>
-      props.darkMode ? '#ffffff' : '#181818'};
+    width:100%;
+    background-Color:${props => (props.darkMode ? '#181818' : '#ffffff')};
     @media screen and (min-width:768px) {
         padding:15px;
 }

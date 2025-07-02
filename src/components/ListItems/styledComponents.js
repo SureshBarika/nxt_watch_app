@@ -17,8 +17,9 @@ export const ListItem = Styled.li`
       }
       return ''
     }};
-    width:100%;
+    width:90%;
     padding:5px 10px;
+    border-radius:10px;
 `
 
 export const ListItemCont = Styled.div`

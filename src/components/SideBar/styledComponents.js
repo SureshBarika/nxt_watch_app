@@ -1,18 +1,22 @@
 import Styled from 'styled-components'
 
+export const SideBarCont = Styled.div`
+     width:300px;
+    height:100vh;
+     background-color:${props => (props.darkMode ? '#181818' : '#ffff')};
+     @media screen and (max-width:768px) {
+        display:none;
+    }
+`
+
 export const SideBarMainCont = Styled.div`
-    display:fixed;
+   position:fixed;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     width:250px;
-    height:90vh;
+    max-height:100vh;
     padding:10px;
-    background-color:${props => (props.darkMode ? '#181818' : '#ffff')};
-    @media screen and (max-width:768px) {
-        display:none;
-    }
-
 `
 
 export const ContactUsCont = Styled.div`

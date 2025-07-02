@@ -1,10 +1,10 @@
 import Styled from 'styled-components'
 
 export const HomeMainContainer = Styled.div`
-  
     padding:0px;
     background-Color:${props => (props.darkMode ? '#080808' : '#ffffff')};
 `
+
 export const PremiumCont = Styled.div`
     display:${props => (props.premiumPopUp ? 'block' : 'none')};
     background-image : url('https://assets.ccbp.in/frontend/react-js/nxt-watch-banner-bg.png');
